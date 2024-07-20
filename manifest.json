@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "OneClick Assistant",
+    "version": "1.0",
+    "description": "Con sólo 1 click podrás obtener información sobre lo que quieras, sólo debes posicionar el mouse sobre el bloque de texto que quieras analizar, o simplemente selecciona una palabra o frase y suelta. En segundos tendrás la información que necesitas.",
+    "permissions": [
+        "contextMenus",
+        "activeTab",
+        "scripting",
+        "notifications"
+    ],
+    "action": {
+        "default_icon": {
+            "16": "img/translate.png",
+            "128": "img/translate.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+            ],
+            "js": [
+                "elements.js",
+                "index.js"
+            ],
+            "css": [
+                "styles.css"
+            ]
+        }
+    ]
+}
